@@ -10,3 +10,15 @@ C:\Users\neica\Source\Repos\ReferenceService\ReferenceService\Domain\obj\Debug\n
 C:\Users\neica\Source\Repos\ReferenceService\ReferenceService\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\Users\neica\Source\Repos\ReferenceService\ReferenceService\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
 C:\Users\neica\Source\Repos\ReferenceService\ReferenceService\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CopyComplete
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
