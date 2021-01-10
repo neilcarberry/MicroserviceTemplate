@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Interfaces.Repositories
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository
+    {
+
+    }
+    public interface IRepository<TEntity> : IRepository where TEntity : class
     {
         TEntity SingleOrDefaultById(int id);
 

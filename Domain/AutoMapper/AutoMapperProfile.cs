@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Infrastructure.AutoMapper;
 using System.Reflection;
 
 namespace Domain.AutoMapper
@@ -29,6 +28,7 @@ namespace Domain.AutoMapper
             var mapsFrom = MapperProfileHelper.LoadCustomMappings(Assembly.GetExecutingAssembly());
 
             foreach (var map in mapsFrom) map.CreateMappings(this);
+            
         }
     }
 }

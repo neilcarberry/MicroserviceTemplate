@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj": {}
+    "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj": {
+    "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\neica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -34,8 +34,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\neica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -125,6 +125,14 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "EventBus": {
+              "target": "Package",
+              "version": "[2020.8.18.1, )"
+            },
+            "EventBusRabbitMQ": {
+              "target": "Package",
+              "version": "[2020.8.18.1, )"
             },
             "MediatR": {
               "target": "Package",

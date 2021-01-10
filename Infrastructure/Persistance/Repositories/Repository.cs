@@ -19,12 +19,12 @@ namespace Infrastructure.Persistance.Repositories
 
             if (Context.Connection.State == ConnectionState.Closed)
             {
-                if (Context.ConnectionString == string.Empty)
+                if (Context.ConnectionString == string.Empty) 
                 {
                     throw new Exception("Connections string non existatnt");
                 }
                 Console.WriteLine("Connecting to database");
-                Context.Connection.Open();
+                //Context.Connection.Open();
             }
         }
 

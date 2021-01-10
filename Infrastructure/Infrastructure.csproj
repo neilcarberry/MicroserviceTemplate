@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="EventBus" Version="2020.8.18.1" />
+    <PackageReference Include="EventBusRabbitMQ" Version="2020.8.18.1" />
     <PackageReference Include="MediatR" Version="8.0.0" />
     <PackageReference Include="MySql.Data" Version="8.0.19" />
     <PackageReference Include="NPoco" Version="4.0.2" />
