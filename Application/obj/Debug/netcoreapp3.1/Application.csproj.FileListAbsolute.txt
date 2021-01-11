@@ -18,3 +18,11 @@ C:\Users\neica\source\repos\MicroserviceTemplate\Application\obj\Debug\netcoreap
 C:\Users\neica\source\repos\MicroserviceTemplate\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
 C:\Users\neica\source\repos\MicroserviceTemplate\Application\obj\Debug\netcoreapp3.1\Application.dll
 C:\Users\neica\source\repos\MicroserviceTemplate\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Infrastructure.dll
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+C:\Users\neica\source\repos\MicroserviceTemplate\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete

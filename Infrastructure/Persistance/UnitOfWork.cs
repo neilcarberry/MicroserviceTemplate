@@ -10,24 +10,12 @@ namespace Infrastructure.Persistance
     {
         protected readonly IDatabaseContext _context;
         public List<IRepository> Repositories { get; }
-        public IBaseDetailsRepository BaseDetail { get; }
         public IAuctionRepository AbilityModifier { get; }
-        public IDescriptionRepository Description { get; }
-        public IStoryRepository Story { get; }
-        public ISkillBonusesRepository SkillBonus { get; }
-        public IRaceLanguageRepository RaceLanguage { get; }
-        public INamesRepository Names { get; }
 
         public UnitOfWork(IDatabaseContext context, IAggregateRepository aggregateRepository)
         {
             _context = context;
-            BaseDetail = aggregateRepository.BaseDetail;
             AbilityModifier = aggregateRepository.AbilityModifier;
-            Description = aggregateRepository.Description;
-            Story = aggregateRepository.Story;
-            SkillBonus = aggregateRepository.SkillBonus;
-            RaceLanguage = aggregateRepository.RaceLanguage;
-            Names = aggregateRepository.Names;
             Repositories = new List<IRepository>();
             Repositories.Add(aggregateRepository.AbilityModifier);
             BeginTransaction();

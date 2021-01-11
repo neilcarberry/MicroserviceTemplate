@@ -14,15 +14,9 @@ namespace API.Controllers
     {
         [Route("{Id}")]
         [HttpGet]
-        public async Task<AuctionDTO> GetAbilityModifier([FromRoute]GetAuctionModifierQuery query)
+        public async Task<AuctionDTO> GetAuctionModifier([FromRoute]GetAuctionModifierQuery query)
         {
             return await Mediator.Send(query);
-        }
-
-        [HttpGet]
-        public async Task<List<AuctionDTO>> GetAbilityModifiers()
-        {
-            return await Mediator.Send(new GetAbilityModifiersQuery());
         }
 
         [HttpPost]
