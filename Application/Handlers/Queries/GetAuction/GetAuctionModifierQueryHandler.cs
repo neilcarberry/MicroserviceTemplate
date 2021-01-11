@@ -14,9 +14,8 @@ namespace Application.Handlers.Queries
         }
         public override async Task<AuctionDTO> HandleEx(GetAuctionModifierQuery request, CancellationToken cancellationToken)
         {
-            DescriptionDTO s;
             //var AbilityMod = UnitOfWork.AbilityModifier.SingleOrDefaultById(request.Id);
-            AuctionDTO bob = new AuctionDTO() { AbilityId = 1, Modifier = 1, RaceId = 2, Id = 1 };
+            AuctionDTO bob = new AuctionDTO() { AbilityId = 1, Modifier = 1,  Id = 1 };
             bob.SetUpMapper(Mapper);
             bob.MapToEntity();
             return default;
