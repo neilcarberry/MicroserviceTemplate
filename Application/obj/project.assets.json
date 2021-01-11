@@ -6507,11 +6507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neica\\source\\repos\\RaceService\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\neica\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Application\\obj\\",
+      "outputPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6534,11 +6534,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Domain\\Domain.csproj"
+            "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\neica\\source\\repos\\RaceService\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\neica\\source\\repos\\MicroserviceTemplate\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -6572,12 +6572,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.10, 3.1.10]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

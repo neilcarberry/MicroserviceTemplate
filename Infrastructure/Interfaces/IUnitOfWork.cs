@@ -7,7 +7,7 @@ namespace Infrastructure.Interfaces
     public interface IUnitOfWork : IDisposable
     {
         IBaseDetailsRepository BaseDetail { get; }
-        IAbilityModifierRepository AbilityModifier { get; }
+        IAuctionRepository AbilityModifier { get; }
         IDescriptionRepository Description { get; }
         IStoryRepository Story { get; }
         ISkillBonusesRepository SkillBonus { get; }

@@ -1,0 +1,4 @@
+C:\Users\neica\source\repos\MicroserviceTemplate\EventBusAzureServiceBus\obj\Debug\netstandard2.0\EventBusAzureServiceBus.csprojAssemblyReference.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\EventBusAzureServiceBus\obj\Debug\netstandard2.0\EventBusAzureServiceBus.AssemblyInfoInputs.cache
+C:\Users\neica\source\repos\MicroserviceTemplate\EventBusAzureServiceBus\obj\Debug\netstandard2.0\EventBusAzureServiceBus.AssemblyInfo.cs
+C:\Users\neica\source\repos\MicroserviceTemplate\EventBusAzureServiceBus\obj\Debug\netstandard2.0\EventBusAzureServiceBus.csproj.CoreCompileInputs.cache

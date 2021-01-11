@@ -11,7 +11,7 @@ namespace Infrastructure.Persistance
         protected readonly IDatabaseContext _context;
         public List<IRepository> Repositories { get; }
         public IBaseDetailsRepository BaseDetail { get; }
-        public IAbilityModifierRepository AbilityModifier { get; }
+        public IAuctionRepository AbilityModifier { get; }
         public IDescriptionRepository Description { get; }
         public IStoryRepository Story { get; }
         public ISkillBonusesRepository SkillBonus { get; }
