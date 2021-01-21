@@ -6,6 +6,6 @@ namespace Infrastructure.Interfaces.Repositories
 {
     public interface IAggregateRepository
     {
-        IAuctionRepository AbilityModifier { get; }
+        IAuctionRepository AuctionRepository { get; }
     }
 }

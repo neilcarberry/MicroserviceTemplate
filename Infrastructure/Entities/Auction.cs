@@ -5,18 +5,18 @@ namespace Infrastructure.Entities
 {
     [TableName("ABILITY_MODIFIERS")]
     [PrimaryKey("Id")]
-    public class Auction : IEntity
+    public class Auction 
     {
         [Column("ID")]
         public int Id { get; set; }
 
-        [Column("RACE_ID")]
-        public int RaceId { get; set; }
+        [Column("SELLER_ID")]
+        public int SellerID { get; set; }
 
-        [Column("MODIFIER")]
-        public int Modifier { get; set; }
+        [Column("AUCTIONEER_ID")]
+        public int AuctioneerId { get; set; }
 
-        [Column("ABILITY_ID")]
-        public int AbilityId { get; set; }
+        [Column("VEHICLE_ID")]
+        public int Vehicle { get; set; }
     }
 }

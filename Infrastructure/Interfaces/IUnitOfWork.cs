@@ -6,9 +6,7 @@ namespace Infrastructure.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {     
-        IAuctionRepository AbilityModifier { get; }
-        public List<IRepository> Repositories { get; }
-        IRepository<T> GetRepository<T>() where T : class;
+        IAuctionRepository AuctionRepository { get; }
         void AbortTransaction();
         void CompleteTransaction();
         void BeginTransaction();

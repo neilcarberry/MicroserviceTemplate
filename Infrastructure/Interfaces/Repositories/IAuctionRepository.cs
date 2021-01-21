@@ -7,6 +7,6 @@ namespace Infrastructure.Interfaces.Repositories
 {
     public interface IAuctionRepository : IRepository<Auction>
     {
-        void test();
+        void AddAuction(Auction auction);
     }
 }

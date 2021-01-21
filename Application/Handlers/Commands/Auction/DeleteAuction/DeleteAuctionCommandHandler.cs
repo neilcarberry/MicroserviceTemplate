@@ -17,8 +17,8 @@ namespace Application.Handlers.Commands
 
         public override Task<Unit> HandleEx(DeleteAuctionCommand request, CancellationToken cancellationToken)
         {
-            var abilityMod = UnitOfWork.AbilityModifier.SingleOrDefaultById(request.Id);
-            UnitOfWork.AbilityModifier.Remove(Mapper.Map<Auction>(abilityMod));
+            var abilityMod = UnitOfWork.AuctionRepository.SingleOrDefaultById(request.Id);
+            UnitOfWork.AuctionRepository.Remove(Mapper.Map<Auction>(abilityMod));
 
             return Unit.Task;
         }

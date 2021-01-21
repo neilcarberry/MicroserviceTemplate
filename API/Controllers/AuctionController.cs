@@ -14,26 +14,26 @@ namespace API.Controllers
     {
         [Route("{Id}")]
         [HttpGet]
-        public async Task<AuctionDTO> GetAuctionModifier([FromRoute]GetAuctionModifierQuery query)
+        public async Task<AuctionDTO> GetAuction([FromRoute] GetAuctionQuery query)
         {
             return await Mediator.Send(query);
         }
 
         [HttpPost]
-        public async Task<Unit> AddAbilityModifier(AddAuctionCommand command)
+        public async Task<Unit> AddAuction(AddAuctionCommand command)
         {
             return await Mediator.Send(command);
         }
 
         [Route("{Id}")]
         [HttpPost]
-        public async Task<Unit> DeleteAbilityModifier(DeleteAuctionCommand command)
+        public async Task<Unit> DeleteAuction(DeleteAuctionCommand command)
         {
             return await Mediator.Send(command);
         }
 
         [HttpPost]
-        public async Task<Unit> ModifyAbilityModifier(ModifyAuctionCommand command)
+        public async Task<Unit> ModifyAuction(ModifyAuctionCommand command)
         {
             return await Mediator.Send(command);
         }

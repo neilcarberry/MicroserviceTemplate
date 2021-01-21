@@ -1,6 +1,5 @@
 ﻿using Application.Abstractions;
-using Infrastructure.Entities;
-using Infrastructure.Interfaces.Repositories;
+using Application.Handlers.Events.NewAuction;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;
@@ -16,11 +15,10 @@ namespace Application.Handlers.Commands
 
         public override Task<Unit> HandleEx(AddAuctionCommand request, CancellationToken cancellationToken)
         {
-            Logger.LogError("test test", "Other stuff");
+            Logger.Log("test test", "Other stuff");
             //((IAbilityModifierRepository)UnitOfWork.GetRepository<AbilityModifier>()).test();
-                        
+            Mediator.Publish(new NewAuctionEvent() { AuctionName = "Wilsons Sale" });
             return Unit.Task;
-
         }
     }
 }

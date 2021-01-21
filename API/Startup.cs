@@ -23,6 +23,11 @@ using MediatR.Pipeline;
 using API.Interceptor;
 using Domain.Interfaces;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
+using EventBus.Extensions;
+using EventBusAzureServiceBus;
+using EventBusAzureServiceBus.Extensions;
+using Infrastructure.Events;
+using MediatR;
 
 namespace RaceService
 {
@@ -56,8 +61,12 @@ namespace RaceService
         {
             services.AddControllers();
 
+            AzureServiceBusConnectionDetails connectionDetails = new AzureServiceBusConnectionDetails() { ConnectionString = Configuration.GetConnectionString("AzureServiceBus") };
             services.AddAutoMapper(typeof(Domain.AutoMapper.AutoMapperProfile).GetTypeInfo().Assembly);
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+            
+            RegisterEventBus(services, connectionDetails);
+            AddEvents(services);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RACE API", Version = "v1" });
@@ -75,6 +84,7 @@ namespace RaceService
                 .RegisterGeneric(typeof(GenericPreProcessorBehavior<>))
                 .As(typeof(IRequestPreProcessor<>))
                 .InstancePerDependency();
+            builder.RegisterGeneric(typeof(EventBusPublisher<>)).As(typeof(INotificationHandler<>));
 
             builder.RegisterAutoMapper(typeof(Domain.AutoMapper.AutoMapperProfile).GetTypeInfo().Assembly);
 
@@ -108,13 +118,38 @@ namespace RaceService
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "RACE API V1");
             });
-
+            ConfigureEventBus(app.ApplicationServices);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
         }
 
+        private void ConfigureEventBus(IServiceProvider applicationServices)
+        {
+            applicationServices.ConfigureEventBus();
+        }
+        private void RegisterEventBus(IServiceCollection serviceCollection, AzureServiceBusConnectionDetails connectionDetails)
+        {
+            serviceCollection.RegisterEventBus(5);
+            serviceCollection.RegisterConnection(connectionDetails, "Auction", "auctionsalechange");
+        }
+
+        private void AddEvents(IServiceCollection services)
+        {
+            var application = Assembly.GetAssembly(typeof(BaseEventHandler<>));
+            var integrationEvents = application.GetTypes()
+                .Where(type => type.GetTypeInfo().ImplementedInterfaces.Any(x => x.Name.EndsWith("EventHandler") && !type.Name.Contains("Base"))).ToList();
+
+            foreach (var implementationType in integrationEvents)
+            {
+                foreach (var interfaceType in implementationType.GetInterfaces())
+                {
+                    services.AddSingleton(interfaceType, implementationType);
+                }
+            }
+
+        }
         private void RegisterRepositories(IServiceCollection services)
         {
             var infrastructure = Assembly.GetAssembly(typeof(Repository<>));

@@ -8,7 +8,11 @@ namespace Domain.Models
     public class AuctionDTO : BaseModel<Auction>, IMap<Auction> 
     {
         public int Id { get; set; }
-        public int Modifier { get; set; }
+        public int Seller { get; set; }
         public int AbilityId { get; set; }       
+        public void cusomtmapping()
+        {
+
+        }
     }
 }

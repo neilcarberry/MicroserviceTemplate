@@ -5,7 +5,7 @@ using Infrastructure.Interfaces;
 
 namespace Domain.Models
 {
-    public class BaseModel<TEntity> where TEntity : IEntity
+    public class BaseModel<TEntity> 
     {
         internal IMapper Mapper { private get; set; }
         public void SetUpMapper(IMapper mapper)

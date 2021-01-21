@@ -14,21 +14,6 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 
 
-
-public static class EpicStringHelper
-{
-    public static string ToString(string stringy)
-    {
-        List<char> charholder = new List<char>();
-        foreach (char item in stringy)
-        {
-            charholder.Add(item);
-        }
-        return charholder.Aggregate(new StringBuilder(), (current, next) => current.Append(current.Length == 0 ? "" : ", ").Append(next)).ToString();
-    }
-
-}
-
 namespace Application.Abstractions
 {
     public abstract class BaseEventHandler<IEvent> : IIntegrationEventHandler<IEvent> where IEvent : IntegrationEvent

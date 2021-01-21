@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Entities
 {
-    public class Entity :IEntity
+    public class Entity 
     {
     }
 }

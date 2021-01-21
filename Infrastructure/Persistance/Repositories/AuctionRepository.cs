@@ -1,6 +1,8 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Interfaces;
 using Infrastructure.Interfaces.Repositories;
+using System;
+using System.Collections.Generic;
 
 namespace Infrastructure.Persistance.Repositories
 {
@@ -10,10 +12,27 @@ namespace Infrastructure.Persistance.Repositories
         {
 
         }
-
-        public void test()
+        public Auction GetAuction(string id)
         {
-            throw new System.NotImplementedException();
+            return new Auction() { AuctioneerId = 1, Id = 1, SellerID = 2, Vehicle = 3 };
+        }
+        public List<Auction> GetAllAuctions()
+        {
+            Console.WriteLine("GETTING DATA FROM DATABASE");
+
+            return new List<Auction>()
+            {
+                new Auction() {
+                    AuctioneerId = 1, Id = 1, SellerID = 2, Vehicle = 3
+                },
+                new Auction() {
+                    AuctioneerId = 1, Id = 1, SellerID = 2, Vehicle = 3
+                }
+            };
+        }
+        public void AddAuction(Auction auction)
+        {
+            Console.WriteLine("WROTE SALE TO DATABSE");
         }
     }
 }
