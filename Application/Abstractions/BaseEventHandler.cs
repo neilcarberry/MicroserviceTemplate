@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Abstractions;
+using Application.Interfaces;
 using AutoMapper;
 using EventBus.Events;
 using EventBus.Interfaces;

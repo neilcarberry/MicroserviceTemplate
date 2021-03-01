@@ -1,24 +1,18 @@
 ﻿using System;
+using System.Net;
 using System.Runtime.Serialization;
 
 namespace Application.Abstractions
 {
     [Serializable]
-    internal class BaseHttpException : Exception
+    public class BaseHttpException : BaseException
     {
-        public BaseHttpException()
+        public HttpStatusCode Code = HttpStatusCode.InternalServerError;
+        public BaseHttpException(string message) : base("Http", message)
         {
         }
 
-        public BaseHttpException(string message) : base(message)
-        {
-        }
-
-        public BaseHttpException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected BaseHttpException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public BaseHttpException(string message, Exception innerException) : base("Http", message, innerException)
         {
         }
     }

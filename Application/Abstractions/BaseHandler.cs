@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Models;
 using Infrastructure.Interfaces;
@@ -11,25 +12,21 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Abstractions
 {
-    public abstract class BaseHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> where TRequest : IRequest<TResponse> 
+    public abstract class BaseHandler<TRequest, TResponse> : IRequestHandler<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
-        protected readonly ILogger<TRequest> Logger;
-        protected readonly IMediator Mediator;
-        protected readonly IUnitOfWork UnitOfWork;
-        protected readonly IMapper Mapper;
-        protected readonly ICoreAggregator CoreAggregator;
-        TResponse ResponseObject;
-        protected BaseHandler(ICoreAggregator coreAggregator)
+        protected ILogger<TRequest> Logger { get; private set; }
+        protected IMediator Mediator { get; private set; }
+        protected IUnitOfWork UnitOfWork { get; private set; }
+        protected IMapper Mapper { get; private set; }
+        public ICoreAggregator CoreAggregator
         {
-            UnitOfWork = coreAggregator.UnitOfWork;
-            Mediator = coreAggregator.Mediator;
-            Mapper = coreAggregator.Mapper;
-            Logger = coreAggregator.Logger.CreateLogger<TRequest>();
-            CoreAggregator = coreAggregator;
-        }
-        public async Task Map()
-        {
-
+            set
+            {
+                Logger = value.Logger.CreateLogger<TRequest>();
+                Mediator = value.Mediator;
+                UnitOfWork = value.UnitOfWork;
+                Mapper = value.Mapper;
+            }
         }
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken)
         {

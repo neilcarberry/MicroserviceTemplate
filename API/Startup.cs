@@ -1,12 +1,10 @@
 using Application.Abstractions;
 using Autofac;
 using Autofac.Extras.AggregateService;
-using AutoMapper;
 using Infrastructure.Interfaces;
 using Infrastructure.Interfaces.Repositories;
 using Infrastructure.Persistance;
 using Infrastructure.Persistance.Repositories;
-using MediatR.Extensions.Autofac.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,13 +19,13 @@ using System.Linq;
 using System.Reflection;
 using MediatR.Pipeline;
 using API.Interceptor;
-using Domain.Interfaces;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 using EventBus.Extensions;
 using EventBusAzureServiceBus;
 using EventBusAzureServiceBus.Extensions;
 using Infrastructure.Events;
 using MediatR;
+using Application.Interfaces;
 
 namespace RaceService
 {
@@ -62,9 +60,11 @@ namespace RaceService
             services.AddControllers();
 
             AzureServiceBusConnectionDetails connectionDetails = new AzureServiceBusConnectionDetails() { ConnectionString = Configuration.GetConnectionString("AzureServiceBus") };
-            services.AddAutoMapper(typeof(Domain.AutoMapper.AutoMapperProfile).GetTypeInfo().Assembly);
+
+            // services.AddMediatR(typeof(BaseHandler<,>).GetTypeInfo().Assembly).;
+
             services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
-            
+
             RegisterEventBus(services, connectionDetails);
             AddEvents(services);
             services.AddSwaggerGen(c =>
@@ -79,19 +79,31 @@ namespace RaceService
         }
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.AddMediatR(typeof(BaseHandler<,>).GetTypeInfo().Assembly);
-            builder
-                .RegisterGeneric(typeof(GenericPreProcessorBehavior<>))
+            builder.RegisterType<Mediator>()
+                .As<IMediator>().InstancePerLifetimeScope();
+
+            // request & notification handlers
+            builder.Register<ServiceFactory>(context =>
+            {
+                var c = context.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
+            });
+
+            builder.RegisterAssemblyTypes(typeof(BaseHandler<,>).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequestHandler<,>)).PropertiesAutowired().InstancePerDependency();
+
+            builder.RegisterGeneric(typeof(GenericPreProcessorBehavior<>))
                 .As(typeof(IRequestPreProcessor<>))
                 .InstancePerDependency();
-            builder.RegisterGeneric(typeof(EventBusPublisher<>)).As(typeof(INotificationHandler<>));
 
+            builder.RegisterGeneric(typeof(EventBusPublisher<>)).As(typeof(INotificationHandler<>));
             builder.RegisterAutoMapper(typeof(Domain.AutoMapper.AutoMapperProfile).GetTypeInfo().Assembly);
 
             builder.RegisterAggregateService<IAggregateRepository>();
             builder.RegisterAggregateService<ICoreAggregator>();
             builder.RegisterAggregateService<IModelAggregator>();
-            // Register your own things directly with Autofac, like:
+
+
             builder.RegisterAssemblyTypes(Assembly.Load(nameof(Infrastructure)))
                 .Where(n => n.Namespace.Contains("Repositories"))
                 .As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == "I" + t.Name));

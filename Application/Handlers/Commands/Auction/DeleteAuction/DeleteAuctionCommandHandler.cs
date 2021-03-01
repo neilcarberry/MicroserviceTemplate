@@ -1,5 +1,6 @@
 ﻿using Application.Abstractions;
-using Application.Abstractions;
+using Application.Interfaces;
+using Application.Interfaces;
 using AutoMapper;
 using Infrastructure.Entities;
 using Infrastructure.Interfaces;

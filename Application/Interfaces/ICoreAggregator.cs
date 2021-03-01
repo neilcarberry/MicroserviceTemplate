@@ -3,7 +3,7 @@ using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Abstractions
+namespace Application.Interfaces
 {
     public interface ICoreAggregator
     {

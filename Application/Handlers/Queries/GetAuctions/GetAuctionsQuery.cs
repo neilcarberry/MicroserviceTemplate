@@ -1,4 +1,4 @@
-﻿using Application.Abstractions;
+﻿using Application.Interfaces;
 using Domain.Models;
 using Infrastructure.Entities;
 using MediatR;

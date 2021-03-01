@@ -1,8 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Application.Interfaces;
+using Application.Abstractions;
 
 namespace API.Filters
 {
@@ -22,8 +23,7 @@ namespace API.Filters
                 context.HttpContext.Response.StatusCode = (int)code;
                 context.Result = new JsonResult(new
                 {
-                    type = "Custom_" + ex.Type,
-                    errors = ex.Errors
+                    type = "Custom_" + ex.Type
                 });
             }
             else
